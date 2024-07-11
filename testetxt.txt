@@ -320,3 +320,213 @@
 </body>
 
 </html>
+body {
+  /* Cria um gradiente de fundo suave com azul (#007bff), preto e branco */
+  background: linear-gradient(200deg, #007bff, #000, #fff); 
+  /* Garante que o fundo cubra toda a altura da tela, mesmo com pouco conteúdo */
+  min-height: 100vh; 
+  font-size: 16px; /* Aumentar o tamanho da fonte */
+  /* Centraliza os elementos horizontalmente e verticalmente */
+  align-items: center;
+  justify-content: center;
+  /* Define a fonte principal como Montserrat, se disponível, ou uma fonte sem serifa padrão */
+  font-family: 'Montserrat', sans-serif;
+  /* Define a cor do texto como branco */
+  color: #fff;
+  /* Ativa o Flexbox para facilitar o layout da página */
+  display: flex; 
+  /* Organiza os elementos filhos do body em coluna (um abaixo do outro) */
+  flex-direction: column;
+  /* Garante que o corpo ocupe a altura total da viewport */
+  min-height: 100vh;
+  /* Adiciona uma transição suave de 0.3 segundos para a propriedade 'transform', quando alterada */
+  transition: transform 0.3s ease-in-out; 
+}
+/* Basic styling for the navigation bar */
+
+.nav-bar {
+  /* Cria um degradê na barra de navegação */
+  background: linear-gradient(100deg, #000); 
+  /* Espaçamento interno da barra de navegação */
+  padding: 10px 10px;
+  /* Ativa o Flexbox para organizar os elementos dentro da barra de navegação */
+  display: flex;
+  /* Distribui os elementos horizontalmente, com espaço entre eles */
+  justify-content: space-between;
+  /* Alinha os elementos verticalmente ao centro */
+  align-items: center;
+  /* Garante que a barra de navegação ocupe toda a largura da página */
+  width: 80%; 
+}
+
+/* Estiliza o container da logo */
+.logo-container {
+  /* Ativa o Flexbox no container da logo */
+  display: flex;
+  /* Alinha os itens verticalmente ao centro */
+  align-items: center;
+  /* Adiciona uma margem à direita do container da logo */
+  margin-right: 90px;
+}
+
+/* Estiliza a imagem da logo */
+.logo-image {
+  /* Posiciona a logo */
+  position: relative;
+  left: 10px;
+  /* Define as dimensões da logo */
+  width: 70px;
+  height: 70px;
+  /* Adiciona um espaço entre a logo e o texto */
+  margin-right: 20px;
+}
+
+/* Estiliza o texto da logo */
+.logo-text {
+  /* Define o tamanho da fonte */
+  font-size: 25px;
+  /* Define o peso da fonte (negrito) */
+  font-weight: bold;
+  /* Define a cor do texto */
+  color: #fdfafa;
+}
+
+/* estilo para links de navegacao */
+.nav-links {
+  /* Ativa o Flexbox para organizar os links de navegação */
+  display: flex;
+  /* Remove os marcadores de lista */
+  list-style: none;
+  /* Remove as margens e preenchimentos padrão da lista */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  /* Adiciona uma margem à direita de cada item da lista */
+  margin-right: 20px;
+}
+
+.nav-links a {
+  /* Define o peso da fonte (negrito) */
+  font-weight: bold;
+  /* Remove a decoração de texto (sublinhado) dos links */
+  text-decoration: none;
+  /* Define a cor do texto dos links */
+  color: #f5f5f5;
+}
+
+/* Estilos do carrossel */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 50px auto;
+  padding: 20px; 
+  border-radius: 20px; 
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.carousel-slide {
+  display: flex;
+  /* Centraliza os itens do slide horizontalmente */
+  justify-content: center; 
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  display: none;
+  margin: 0; 
+  max-width: 100%; /* ou um valor fixo em pixels */
+  height: auto;
+}
+
+.carousel-item.active {
+  display: block;
+}
+
+/* Estilos para o gradiente do carrossel */
+.carousel-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 40px); /* Subtrai o padding dos dois lados */
+  height: calc(100% - 40px); /* Subtrai o padding dos dois lados */
+  /* Ajusta o gradiente para uma sombra mais suave */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent); 
+  opacity: 1; 
+  transition: opacity 0.3s ease;
+  border-radius: 20px; 
+}
+
+/* Estilos para o gradiente do carrossel ao passar o mouse sobre ele */
+.carousel-wrapper:hover .carousel-gradient {
+  opacity: 0; 
+}
+
+.carousel-item img {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Adiciona uma sombra mais proeminente à imagem */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  
+}
+
+/* Estilos para os botões de navegação do carrossel */
+.prev-btn, .next-btn {
+  cursor: pointer;
+  position: absolute;
+  /* Posicionamento em relação ao container do carrossel */
+  top: 50%; /* Centraliza verticalmente */
+  /* Remove o transform translateY */
+  /* transform: translateY(-50%); */ 
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  border: none;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para os botões ao passar o mouse */
+.prev-btn:hover, .next-btn:hover {
+  background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.prev-btn {
+  /* Posiciona o botão "anterior" mais perto da borda esquerda da imagem */
+  left: 20px; /* Ajuste este valor conforme necessário */
+}
+
+.next-btn {
+  /* Posiciona o botão "próximo" mais perto da borda direita da imagem */
+  right: 20px; /* Ajuste este valor conforme necessário */
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%; /* Largura padrão para telas maiores */
+  margin: 0 auto; /* Centraliza o container */
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%; /* Largura ajustada para telas menores */
+  }
+}

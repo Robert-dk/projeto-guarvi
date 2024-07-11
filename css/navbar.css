@@ -96,12 +96,8 @@ body {
 
 /* Estilos do carrossel */
 .carousel-wrapper {
-  position: relative;
   width: 100%;
   height: auto;
-  margin-top: 50px auto;
-  padding: 20px; 
-  border-radius: 20px; 
 }
 
 .carousel-container {
@@ -202,11 +198,20 @@ body {
   width: 80%; /* Largura padrão para telas maiores */
   margin: 0 auto; /* Centraliza o container */
 }
-/* ... (seu CSS original) ... */
 
 @media (max-width: 768px) {
-  .container {
-    width: 90%; /* Largura ajustada para telas menores */
+  .prev-btn, 
+  .next-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .prev-btn {
+    left: 2%;
+  }
+
+  .next-btn {
+    right: 2%;
   }
 }
-
