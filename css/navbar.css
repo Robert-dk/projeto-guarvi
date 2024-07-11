@@ -3,6 +3,7 @@ body {
   background: linear-gradient(200deg, #007bff, #000, #fff); 
   /* Garante que o fundo cubra toda a altura da tela, mesmo com pouco conteúdo */
   min-height: 100vh; 
+  font-size: 16px; /* Aumentar o tamanho da fonte */
   /* Centraliza os elementos horizontalmente e verticalmente */
   align-items: center;
   justify-content: center;
@@ -206,27 +207,6 @@ body {
 @media (max-width: 768px) {
   .container {
     width: 90%; /* Largura ajustada para telas menores */
-  }
-}
-
-/* ... (seu CSS original) ... */
-
-/* Media Query para telas menores que 480px */
-@media (max-width: 480px) {
-  .carousel-wrapper {
-    width: 90%; /* Aumenta a largura do carrossel para ocupar mais espaço em telas pequenas */
-  }
-
-  .carousel-item img {
-    width: 100%; /* Garante que a imagem ocupe toda a largura do item */
-    height: auto;  /* Mantém a proporção da imagem */
-  }
-
-  /* Ajuste outros elementos do carrossel conforme necessário */
-  .prev-btn, .next-btn {
-    /* Diminua o tamanho dos botões ainda mais */
-    width: 25px; 
-    height: 25px;
   }
 }
 
