@@ -1,0 +1,48 @@
+
+
+/* Estilos da seção "Doe" */
+#doe {
+    padding: 40px 15px; /* Adiciona padding lateral */
+}
+
+.section-title {
+    text-align: center;
+    color: #212529;
+}
+
+.section-description {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#doe img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Layout responsivo básico (opcional) */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px;
+}
+.btn-primary {
+    background-color: transparent; /* Remove o fundo */
+    border: 2px solid #007bff; /* Borda azul sólida de 2px */
+    color: #007bff; /* Texto azul */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+/* Adicione este estilo para quando o mouse passar por cima do botão */
+.btn-primary:hover {
+    background-color: #007bff; /* Fundo azul quando o mouse passa por cima */
+    color: white; /* Texto branco quando o mouse passa por cima */
+}
+

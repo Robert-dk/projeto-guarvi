@@ -1,0 +1,165 @@
+/* Estiliza o título principal (h2), provavelmente usado para o título do álbum ou da seção */
+h2 {
+  text-align: center; /* Centraliza o texto horizontalmente dentro do elemento h2 */
+  margin: 20px auto; /* Margem superior/inferior: 20px, margem esquerda/direita: auto (centraliza horizontalmente) */
+}
+.containerprojeto {
+  display: grid; /* Ativa o grid */
+  gap: 20px; /* Espaço entre os álbuns */
+}
+
+/* Layout em 3 colunas para telas grandes */
+.containerprojeto {
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas de largura igual */
+  grid-template-areas: /* Definição das áreas */
+      "album1 album2 album3"
+      "album4 album5 album6"
+      "album7 album8 album9"; 
+}
+
+/* Layout em 2 colunas para telas médias */
+@media (max-width: 768px) {
+  .containerprojeto {
+      grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+      grid-template-areas: /* Reorganização das áreas */
+          "album1 album2"
+          "album3 album4"
+          "album5 album6"
+          "album7 album8"
+          "album9 ."; 
+  }
+}
+
+/* Layout em 1 coluna para telas pequenas */
+@media (max-width: 480px) {
+  .containerprojeto {
+      grid-template-columns: 1fr; /* 1 coluna */
+      grid-template-areas: /* Empilhamento vertical */
+          "album1"
+          "album2"
+          "album3"
+          /* ... e assim por diante ... */
+  }
+}
+
+.album {
+  width: 80%; 
+  aspect-ratio: 1/1; 
+  /* ... seus outros estilos ... */
+}
+
+/* Estiliza cada container de álbum */
+.album {
+  margin: 20px auto; /* Margem superior/inferior: 20px, margem esquerda/direita: auto (centraliza horizontalmente) */
+  width: 250px;     /* Define uma largura fixa para o container do álbum */
+  height: 300px;    /* Aumenta a altura para acomodar a imagem, título e descrição */
+  border-radius: 10px;     /* Cantos arredondados para um visual mais suave */
+  overflow: hidden;       /* Esconde o conteúdo que ultrapassa os limites do container */
+  display: inline-block;  /* Permite que vários álbuns sejam colocados lado a lado */
+  text-align: center;   /* Centraliza o conteúdo de texto dentro do container do álbum */
+}
+
+/* Estiliza a imagem dentro do container do álbum */
+.album img {
+  width: 60%;        /* Faz a imagem preencher a largura do seu container */
+  height: 150px;       /* Define uma altura fixa para a imagem */
+  object-fit: cover;  /* Redimensiona e corta a imagem para caber no container, mantendo a proporção */
+  border-radius: 10px 10px 0 0; /* Cantos superiores arredondados para a imagem */
+  margin: 0 auto;     /* Centraliza a imagem horizontalmente dentro do container */
+}
+
+/* Estiliza o título do projeto (h3) */
+.album h3 {
+  font-size: 18px; 
+  margin: 10px auto; /* Margem superior/inferior: 10px, margem esquerda/direita: auto (centraliza horizontalmente) */
+}
+
+/* Estiliza o parágrafo de descrição (p) */
+.album p {
+  font-size: 14px;
+  margin: 10px auto; /* Margem superior/inferior: 10px, margem esquerda/direita: auto (centraliza horizontalmente) */
+}
+
+/* Estilos da caixa de luz (lightbox) */
+.lightbox {
+  display: none;       /* A caixa de luz fica inicialmente oculta */
+  position: fixed;     /* Fixa a caixa de luz na tela, mesmo com rolagem */
+  top: 0;               /* Posiciona a caixa de luz no topo da tela */
+  left: 0;              /* Posiciona a caixa de luz à esquerda da tela */
+  width: 100%;          /* Ocupa toda a largura da tela */
+  height: 100%;         /* Ocupa toda a altura da tela */
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo preto semitransparente */
+  padding: 20px;        /* Espaçamento interno */
+  text-align: center;   /* Centraliza o conteúdo de texto */
+  z-index: 1;           /* Garante que a caixa de luz fique por cima de outros elementos */
+  overflow-y: auto;    /* Permite rolagem vertical se o conteúdo for muito alto */
+}
+
+/* Estilos da imagem dentro da caixa de luz */
+.lightbox img {
+  width: 70%;       /* A imagem ocupa toda a largura da caixa de luz */
+  height: auto;     /* A altura da imagem se ajusta automaticamente para manter a proporção */
+  margin: 20px;      /* Margem ao redor da imagem */
+  border-radius: 10px;  /* Cantos arredondados para a imagem */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para destacar a imagem */
+}
+
+/* Adiciona um gradiente escuro sobre a caixa de luz */
+.lightbox::before {
+  content: "";            /* Conteúdo vazio (pseudo-elemento) */
+  position: absolute;    /* Posicionamento absoluto dentro da caixa de luz */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)); /* Gradiente preto de cima para baixo */
+  opacity: 0.5;          /* Opacidade do gradiente */
+  position: sticky;
+  top: 0;
+}
+
+/* Regra para exibir a caixa de luz quando o álbum estiver ativo */
+.album.active .lightbox {
+  display: block; /* Exibe a caixa de luz quando a classe 'active' for adicionada ao álbum */
+}
+
+/* Estiliza o botão para abrir a caixa de luz (lightbox) */
+.btn-open {
+  background-color: transparent; /* Fundo transparente */
+  color: #007bff; /* Azul vibrante */
+  border: 2px solid #007bff; /* Borda azul */
+  padding: 10px 20px;
+  border-radius: 25px; /* Cantos mais arredondados */
+  font-weight: bold;
+  transition: all 0.3s ease; /* Transição suave para o hover */
+  cursor: pointer; /* Cursor de mãozinha ao passar o mouse */
+  display: block; /* Faz o botão ocupar toda a largura do container */
+  margin: 20px auto; /* Centraliza o botão horizontalmente */
+}
+
+/* Muda a cor de fundo do botão ao passar o mouse */
+.btn-open:hover {
+  background-color: #007bff;
+  color: white; 
+}
+
+  .btn-close {
+  background-color: transparent;
+  color: #007bff; /* Vermelho */
+  border: 2px solid #007bff;
+  padding: 8px 16px;
+  border-radius: 50%;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 20px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 3;
+}
+
+.btn-close:hover {
+  background-color: #007bff;
+  color: white;
+}

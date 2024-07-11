@@ -1,0 +1,92 @@
+
+.contact-info {
+  display: flex; /* Alinha os botões horizontalmente */
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  margin-top: 20px; /* Ajuste o valor conforme necessário */
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o ícone no botão */
+  width: 80px; /* Largura do botão circular */
+  height: 80px; /* Altura do botão circular */
+  border-radius: 50%; /* Faz o botão ser circular */
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px; /* Espaçamento entre os botões */
+  transition: transform 0.3s ease; /* Efeito de hover */
+}
+
+.contact-button ion-icon {
+  font-size: 50px; /* Tamanho do ícone */
+}
+
+/* Gradientes e cores */
+.instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+  color: white;
+}
+
+.whatsapp {
+  background: linear-gradient(45deg, #25D366, #128C7E);
+  color: white;
+}
+
+.email {
+  background: linear-gradient(45deg, #D44638, #EA4335); /* Tons de vermelho para email */
+  color: white;
+}
+
+.contact-button:hover {
+  transform: scale(1.1); /* Aumenta levemente o botão ao passar o mouse */
+}
+
+
+/*... MAPS ... */
+.contact-local {
+  text-align: center; /* Centraliza o cabeçalho */
+  flex-direction: column; /* Organize os elementos em coluna */
+  align-items: center;       /* Centraliza horizontalmente */
+}
+
+.location-header {
+  display: flex;             /* Use Flexbox para alinhar */
+  align-items: center;      /* Alinha verticalmente */
+  justify-content: center;  /* Centraliza horizontalmente */
+}
+
+.location-header h3 {
+  margin-left: 10px; /* Espaçamento entre ícone e texto */
+}
+
+.contact-local ion-icon{
+  font-size: 2em;
+  color: #007bff;
+}
+
+#map {
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  height: 400px; /* set initial height */
+  width: 100%; /* set full width */
+}
+
+@media (min-width: 768px) {
+  #map {
+    height: 500px; /* adjust height for larger screens */
+  }
+}
+
+@media (min-width: 992px) {
+  #map {
+    height: 600px; /* adjust height for even larger screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  #map {
+    height: 700px; /* adjust height for very large screens */
+  }
+}
