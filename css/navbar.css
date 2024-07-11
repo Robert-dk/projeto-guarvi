@@ -197,28 +197,15 @@ body {
   box-sizing: border-box;
 }
 
-
+.container {
+  width: 80%; /* Largura padrão para telas maiores */
+  margin: 0 auto; /* Centraliza o container */
+}
 /* ... (seu CSS original) ... */
 
-/* Media Queries para Responsividade */
-@media (max-width: 768px) { 
-  /* Estilos para tablets e telas menores */
-  .nav-bar {
-    width: 90%; /* Aumenta a largura da barra de navegação em telas menores */
-  }
-
-  .logo-container {
-    margin-right: 20px; /* Diminui a margem à direita do container da logo */
-  }
-
-  .carousel-item {
-    max-width: 80%; /* Aumenta a largura máxima do item do carrossel em telas menores */
-  }
-
-  .prev-btn, .next-btn {
-    width: 30px; /* Diminui o tamanho dos botões do carrossel */
-    height: 30px;
-    font-size: 16px;
+@media (max-width: 768px) {
+  .container {
+    width: 90%; /* Largura ajustada para telas menores */
   }
 }
 
