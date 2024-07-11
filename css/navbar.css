@@ -96,8 +96,12 @@ body {
 
 /* Estilos do carrossel */
 .carousel-wrapper {
+  position: relative;
   width: 100%;
   height: auto;
+  margin-top: 50px auto;
+  padding: 20px; 
+  border-radius: 20px; 
 }
 
 .carousel-container {
@@ -199,19 +203,30 @@ body {
   margin: 0 auto; /* Centraliza o container */
 }
 
+/* Media query para telas menores (até 768px) */
 @media (max-width: 768px) {
-  .prev-btn, 
-  .next-btn {
-    width: 30px;
-    height: 30px;
-    font-size: 16px;
+  .nav-bar {
+    flex-direction: column; /* Muda para layout vertical */
+    align-items: flex-start; /* Alinha itens ao início */
+    width: 100%; /* Ocupa toda a largura da tela */
+    margin: 0; /* Remove margens */
   }
 
-  .prev-btn {
-    left: 2%;
+  .logo-container {
+    margin-bottom: 10px; /* Adiciona espaço abaixo do logo */
   }
 
-  .next-btn {
-    right: 2%;
+  .nav-links {
+    flex-direction: column; /* Muda para layout vertical */
+    align-items: flex-start; /* Alinha itens ao início */
+    width: 100%; /* Ocupa toda a largura da tela */
+  }
+
+  .nav-links li {
+    margin-bottom: 10px; /* Adiciona espaço abaixo de cada item */
+  }
+
+  .logo-text {
+    display: block;
   }
 }
